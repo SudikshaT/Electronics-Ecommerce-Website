@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Our Shop - Shri Ram Electronics</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        body {
+            background-color: #0d0d0d;
+            color: #fff;
+            font-family: Arial, sans-serif;
+            text-align: center;
+            margin: 0;
+            padding: 0;
+        }
+
+        /* Header styling */
+        header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            padding: 15px 30px;
+            background-color: #2F2F2F;
+            box-shadow: 0 4px 10px #B00000;
+        }
+
+        .logo img {
+            height: 80px;
+        }
+
+        /* Title in one line */
+        .title {
+            font-size: 2.0em;
+            font-weight: bold;
+            text-transform: uppercase;
+            color: #B00000;
+            -webkit-text-stroke: 2px #B00000;
+            transition: 0.3s ease-in-out;
+            white-space: nowrap; /* Prevent breaking */
+            flex-grow: 1; /* Center the title */
+            text-align: center;
+        }
+
+        .title:hover {
+            color: #ff4d4d;
+            text-shadow: 0 0 15px #ff4d4d, 0 0 30px #ff4d4d;
+            -webkit-text-stroke: 2px #ff0000;
+            transform: scale(1.05);
+        }
+
+        /* Navbar with equal spacing */
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-grow: 1; /* Ensures space is used properly */
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            gap: 30px;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav li {
+            list-style: none;
+        }
+
+        nav a {
+            text-decoration: none;
+            color: #D3D3D3;
+            font-size: 1.5em;
+            position: relative;
+            transition: color 0.3s, transform 0.3s ease-in-out;
+            padding: 10px;
+        }
+
+        nav a:hover {
+            color: #B00000;
+            transform: translateY(-5px);
+        }
+
+        nav a::after {
+            content: "";
+            position: absolute;
+            left: 0;
+            bottom: -5px;
+            width: 0;
+            height: 3px;
+            background: linear-gradient(90deg, pink, sandybrown);
+            transition: width 0.4s ease-in-out;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Contact section */
+        .contact-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            align-items: center;
+            padding: 50px;
+        }
+
+        .contact-left, .contact-right {
+            flex: 1;
+            min-width: 300px;
+            padding: 20px;
+        }
+
+        .contact-left iframe {
+            width: 100%;
+            height: 350px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(255, 7, 58, 0.8);
+        }
+
+        .contact-right h2 {
+            color: #ff073a;
+            text-shadow: 0 0 10px #ff073a;
+            font-size: 2em;
+        }
+
+        .contact-info p {
+            font-size: 1.2em;
+            margin: 10px 0;
+        }
+
+        .social-icons a {
+            display: inline-block;
+            margin: 10px;
+            font-size: 2em;
+            color: #ff073a;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .social-icons a:hover {
+            transform: scale(1.2);
+            text-shadow: 0 0 15px #ff073a;
+        }
+
+        /* Button Neon Effect */
+        .contact-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            font-size: 17px;
+            color: #ffffff80;
+            background: transparent;
+            border: 1px solid #ffffff80;
+            border-radius: 8px;
+            cursor: pointer;
+            transition: 0.5s ease;
+        }
+
+        .contact-btn:hover {
+            color: #ffffff;
+            background: #008cff;
+            border: 1px solid #008cff;
+            box-shadow: 0 0 20px #008cff;
+        }
+
+        /* Footer */
+        footer {
+            padding: 20px;
+            background-color: #2F2F2F;
+            color: #D3D3D3;
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+<header>
+    <div class="logo">
+        <img src="images/srelogo.png" alt="Shri Ram Electronics">
+    </div>
+    <div class="title">Shri Ram Electronics</div>
+    <nav>
+        <ul>
+            <li><a href="home.html">Home</a></li>
+            <li><a href="about.html">About Us</a></li>
+            <li><a href="contact.html">Contact Us</a></li>
+            
+
+            <li><a href="login.html">Login</a></li>
+        </ul>
+    </nav>
+</header>
+
+<div class="contact-container">
+    <div class="contact-left">
+        <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3935.753118702466!2d77.55585407427232!3d9.44303558237212!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x3b06e9c8cf9b64a3%3A0xad7d91fc4ec32004!2sSHRI%20RAM%20ELECTRONICS!5e0!3m2!1sen!2sin!4v1740994404724!5m2!1sen!2sin" width="600" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+    </div>
+    <div class="contact-right">
+        <h2>Get in Touch</h2>
+        <div class="contact-info">
+            <p><strong>Name:</strong> Shri Ram Electronics</p>
+            <p><strong>Address:</strong> SHRI RAM ELECTRONICS
+                Thoppupatti, Rajapalayam, Tamil Nadu 626117</p>
+            <p><strong>Email:</strong> shriramrefridgerator@rediffmail.com</p>
+        </div>
+        <div class="social-icons">
+            <a href="https://wa.me/8668120044" target="_blank">🟢 WhatsApp</a>
+            <a href="https://www.facebook.com/YourPage" target="_blank">🔵 Facebook</a>
+            <a href="https://www.instagram.com/YourProfile" target="_blank">🟣 Instagram</a>
+            <a href="https://www.youtube.com/@PacificMallGroup" target="_blank">🔴 YouTube</a>
+
+        </div>
+        <a href="tel:+8668120044">
+            <button class="contact-btn">Contact Us</button>
+        </a>
+    </div>
+</div>
+
+<footer>
+    <p>&copy; 2025 Shri Ram Electronics. All Rights Reserved.</p>
+</footer>
+
+</body>
+</html>
