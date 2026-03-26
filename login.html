@@ -1,0 +1,184 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>User Login</title>
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Arial', sans-serif;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background: #000;
+            color: #fff;
+            overflow: hidden;
+            position: relative;
+        }
+        .background {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            overflow: hidden;
+            z-index: -1;
+        }
+        .background span {
+            position: absolute;
+            width: 20px;
+            height: 20px;
+            background: rgba(255, 255, 255, 0.2);
+            box-shadow: 0 0 10px rgba(255, 255, 255, 0.5);
+            animation: floating 10s infinite linear;
+            border-radius: 50%;
+        }
+        @keyframes floating {
+            0% { transform: translateY(100vh) scale(0.5); opacity: 1; }
+            100% { transform: translateY(-10vh) scale(1.5); opacity: 0; }
+        }
+        .login-container {
+            background: rgba(255, 255, 255, 0.1);
+            padding: 30px;
+            border-radius: 10px;
+            text-align: center;
+            border: 2px solid transparent;
+            animation: neon-border 1.5s infinite alternate;
+            position: relative;
+            overflow: hidden;
+            cursor: pointer;
+        }
+        @keyframes neon-border {
+            0% { border-color: #ff6b6b; box-shadow: 0 0 20px #ff6b6b; }
+            50% { border-color: #1db954; box-shadow: 0 0 20px #1db954; }
+            100% { border-color: #00aaff; box-shadow: 0 0 20px #00aaff; }
+        }
+        .login-container h2 {
+            color: #fff;
+            margin-bottom: 20px;
+        }
+        .hidden-content {
+            display: block;
+        }
+        .login-container:hover .hidden-content {
+            display: block;}
+        .input-group {
+            margin-bottom: 15px;
+            text-align: left;
+        }
+        .input-group label {
+            display: block;
+            margin-bottom: 5px;
+            font-weight: bold;
+        }
+        .input-group input {
+            width: 100%;
+            padding: 10px;
+            border: none;
+            border-radius: 5px;
+            outline: none;
+            background: #222;
+            color: #fff;
+        }
+        .glow-on-hover {
+            width: 100%;
+            height: 50px;
+            border: none;
+            outline: none;
+            color: #fff;
+            background: #111;
+            cursor: pointer;
+            position: relative;
+            z-index: 0;
+            border-radius: 10px;
+            font-size: 16px;
+            font-weight: bold;
+        }
+        .glow-on-hover:before {
+            content: '';
+            background: linear-gradient(45deg, #ff0000, #ff7300, #fffb00, #48ff00, #00ffd5, #002bff, #7a00ff, #ff00c8, #ff0000);
+            position: absolute;
+            top: -2px;
+            left: -2px;
+            background-size: 400%;
+            z-index: -1;
+            filter: blur(5px);
+            width: calc(100% + 4px);
+            height: calc(100% + 4px);
+            animation: glowing 20s linear infinite;
+            opacity: 0;
+            transition: opacity .3s ease-in-out;
+            border-radius: 10px;
+        }
+        .glow-on-hover:hover:before {
+            opacity: 1;
+        }
+        .glow-on-hover:after {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            background: #111;
+            left: 0;
+            top: 0;
+            border-radius: 10px;
+        }
+        @keyframes glowing {
+            0% { background-position: 0 0; }
+            50% { background-position: 400% 0; }
+            100% { background-position: 0 0; }
+        }
+        .register-text {
+            margin-top: 15px;
+            font-size: 14px;
+        }
+        .register-text a {
+            color: #00aaff;
+            text-decoration: none;
+            font-weight: bold;
+        }
+        .register-text a:hover {
+            text-decoration: underline;
+        }
+    </style>
+</head>
+<body>
+    <div class="background">
+        <script>
+            for(let i = 0; i < 20; i++) {
+                let span = document.createElement("span");
+                let size = Math.random() * 15 + 10;
+                let positionX = Math.random() * 100;
+                let duration = Math.random() * 10 + 5;
+                span.style.width = `${size}px`;
+                span.style.height = `${size}px`;
+                span.style.left = `${positionX}%`;
+                span.style.animationDuration = `${duration}s`;
+                document.querySelector(".background").appendChild(span);
+            }
+        </script>
+    </div>
+    <div class="login-container">
+        <h2>User Login</h2>
+        <div class="hidden-content">
+            <form action="login.php" method="POST">
+                <div class="input-group">
+                    <label for="username">Username</label>
+                    <input type="text" id="username" name="username" placeholder="Enter your username" required>
+                </div>
+                <div class="input-group">
+                    <label for="password">Password</label>
+                    <input type="password" id="password" name="password" placeholder="Enter your password" required>
+                </div>
+                <button type="submit" class="glow-on-hover">Login</button>
+            </form>
+            <p class="register-text">Don't have an account? <a href="register.html">Register Here</a></p>
+        </div>
+    </div>
+</body>
+</html>
